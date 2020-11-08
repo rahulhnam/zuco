@@ -71,39 +71,6 @@
         $(this).prev().removeClass('active');
     });
 
-    /*--------------------------
-        Banner Slider
-    ----------------------------*/
-    $(".banner__slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: true,
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true
-    });
-
-    /*--------------------------
-        Product Details Slider
-    ----------------------------*/
-    $(".product__details__pic__slider").owlCarousel({
-        loop: false,
-        margin: 0,
-        items: 1,
-        dots: false,
-        nav: true,
-        navText: ["<i class='arrow_carrot-left'></i>","<i class='arrow_carrot-right'></i>"],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: false,
-        mouseDrag: false,
-        startPosition: 'URLHash'
-    }).on('changed.owl.carousel', function(event) {
-        var indexNum = event.item.index + 1;
-        product_thumbs(indexNum);
-    });
-
     function product_thumbs (num) {
         var thumbs = document.querySelectorAll('.product__thumb a');
         thumbs.forEach(function (e) {
@@ -114,23 +81,11 @@
         })
     }
 
-
     /*------------------
 		Magnific
     --------------------*/
     $('.image-popup').magnificPopup({
         type: 'image'
-    });
-
-
-    $(".nice-scroll").niceScroll({
-        cursorborder:"",
-        cursorcolor:"#dddddd",
-        boxzoom:false,
-        cursorwidth: 5,
-        background: 'rgba(0, 0, 0, 0.2)',
-        cursorborderradius:50,
-        horizrailenabled: false
     });
 
     /*------------------
@@ -154,12 +109,6 @@
 
 
     // Uncomment below and use your date //
-
-    /* var timerdate = "2020/12/30" */
-
-	$("#countdown-time").countdown(timerdate, function(event) {
-        $(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>" + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>" + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
-    });
 
     /*-------------------
 		Range Slider
